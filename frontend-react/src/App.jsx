@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/stock-prediction-portal">
           <Header />
             <Routes>
               <Route path = '/' element = {<Main />} />
