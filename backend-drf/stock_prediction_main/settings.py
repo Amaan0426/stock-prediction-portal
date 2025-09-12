@@ -28,7 +28,10 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 #Added render to host the backend on render.com Allowed hosts
-ALLOWED_HOSTS = ['stock-prediction-portal-38rr.onrender.com']
+ALLOWED_HOSTS = [
+    'stock-prediction-portal-38rr.onrender.com',
+    'amaan0426.github.io',
+]
 
 
 # Application definition
@@ -131,8 +134,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173"
+    "https://amaan0426.github.io",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -144,3 +150,21 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=10),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+CORS_ALLOW_HEADERS = [
+    "authorization",
+    "content-type",
+    "x-csrftoken",
+    "accept",
+    "origin",
+    "user-agent",
+]
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
